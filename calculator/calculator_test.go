@@ -8,24 +8,24 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-	result := calculator.Add(1, 2)
-	expected := 3
+	got := calculator.Add(1, 2)
+	want := 3
 
-	assert.Equal(t, expected, result, "Add(1, 2) should return 3")
+	assert.Equal(t, want, got, "Add(1, 2) function should return 3")
 }
 
 func TestDivideBy(t *testing.T) {
-	result, err := calculator.DivideBy(10, 2)
+	got, err := calculator.DivideBy(10, 2)
 	assert.NoError(t, err, "it should not return error")
 
-	assert.Equal(t, 5, result, "DivideBy(10, 2) should return 5")
+	assert.Equal(t, 5, got, "DivideBy(10, 2) should return 5")
 }
 
 func TestDivideBy_BiggerNumber(t *testing.T) {
-	result, err := calculator.DivideBy(2, 10)
+	got, err := calculator.DivideBy(2, 10)
 	assert.Error(t, err, "it should return error")
 
-	assert.Equal(t, 0, result, "DivideBy(2, 10) should return 0 due to invalid number")
+	assert.Equal(t, 0, got, "DivideBy(2, 10) should return 0 due to invalid number")
 }
 
 func TestDivideBy_ZeroNumber(t *testing.T) {
